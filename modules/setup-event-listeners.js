@@ -1,7 +1,7 @@
 import { refreshPage } from './code-reuse.js';
 import { draggableTrue } from './draggable.js';
 
-function setEventListener(list, theFunction, event) {
+const setEventListener = (list, theFunction, event) => {
   for (let i = 0; i < list.length; i += 1) {
     list[i].addEventListener(event, theFunction);
   }

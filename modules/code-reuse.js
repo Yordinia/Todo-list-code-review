@@ -1,7 +1,7 @@
 const form = document.querySelector('form');
 const listView = document.querySelector('#todo-list');
 
-export function createLi(noteObj, index, isDragOn) {
+export const createLi = (noteObj, index, isDragOn) => {
   const li = document.createElement('li');
   li.classList.add('navbar', 'navbar-brand');
   li.setAttribute('data-index', index);
@@ -26,26 +26,26 @@ export function createLi(noteObj, index, isDragOn) {
   return li;
 }
 
-export function toLocal(list) {
+export const toLocal = (list) => {
   localStorage.setItem('list', JSON.stringify(list));
 }
 
-export function fromLocal() {
+export const fromLocal = () => {
   return JSON.parse(localStorage.getItem('list'));
 }
 
-export function refreshPage() {
+export const refreshPage =()=> {
   document.location.reload();
 }
 
-export function updateId(myList) {
+export const updateId =(myList) =>{
   myList.forEach((object, index) => {
     object.id = index;
   });
   toLocal(myList);
 }
 
-export function falseInput() {
+export const falseInput= () => {
   const falseInput = form.querySelector('#false-input');
   form.reset();
   falseInput.classList.replace('setVisibilityHidden', 'setVisibility');
@@ -55,7 +55,7 @@ export function falseInput() {
   return false;
 }
 
-export function listEmpty() {
+export const listEmpty = () => {
   const li = document.createElement('li');
   li.classList.add('navbar-brand');
   li.innerHTML = `<p> 

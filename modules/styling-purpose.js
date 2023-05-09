@@ -6,12 +6,12 @@ const classOffs = ['mouseout', 'blur'];
 
 let hover = false;
 
-function classOn(e) {
+const classOn = e => {
   input.classList.toggle('on-hover', true);
   if (e.type === 'mouseover') hover = true;
 }
 
-function classOff(e) {
+const classOff = e => {
   if (e.type === 'mouseout') {
     let flag = false;
     if (hover === false || e.target.value !== '') flag = true;
@@ -20,7 +20,7 @@ function classOff(e) {
   input.classList.toggle('on-hover', false);
 }
 
-function hideCursor(e) {
+const hideCursor = e => {
   e.target.style.cursor = 'none';
   hover = true;
 }
@@ -30,12 +30,12 @@ classOffs.forEach((event) => input.addEventListener(event, classOff));
 
 input.addEventListener('keyup', hideCursor);
 
-export function toggleClearCompleted(theList) {
+export const toggleClearCompleted = theList => {
   const complete = theList.checked !== 0;
   if (complete) { clear.classList.toggle('disabled', false); } else { clear.classList.toggle('disabled', true); }
 }
 
-export function toggleCheckedList(li, flag, isDragOn) {
+export const toggleCheckedList = (li, flag, isDragOn) => {
   const edit = li.lastElementChild.firstElementChild;
   const drag = li.lastElementChild.lastElementChild;
 
@@ -50,7 +50,7 @@ export function toggleCheckedList(li, flag, isDragOn) {
   }
 }
 
-export function showDraggable(bool) {
+export const showDraggable = bool => {
   const dragIcon = document.querySelectorAll('.bi-three-dots-vertical');
 
   dragIcon.forEach((drag) => {

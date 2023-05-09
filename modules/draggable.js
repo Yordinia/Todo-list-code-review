@@ -9,7 +9,7 @@ let droppedOver;
 let droppedOverId;
 
 
-function dragStart({ target: li }) {
+const dragStart = ({ target: li }) => {
   beingDragged = li;
   beingDraggedId = li.getAttribute('data-index') * 1;
 }
@@ -20,7 +20,7 @@ const dragEnd = ({ target }) => {
   finilizeDrag();
 };
 
-function finilizeDrag() {
+const finilizeDrag = () => {
   const fromLocal = JSON.parse(localStorage.getItem('list'));
   const a = fromLocal[beingDraggedId];
   const b = fromLocal[droppedOverId];
@@ -33,7 +33,7 @@ function finilizeDrag() {
   updateId(list);
 }
 
-function toggleDrag(local) {
+const toggleDrag = (local) => {
   let isDragOn;
   if (local) {
     isDragOn = false;
@@ -47,7 +47,7 @@ function toggleDrag(local) {
   return isDragOn;
 }
 
-export function draggableTrue() {
+export const draggableTrue = () => {
   const local = JSON.parse(localStorage.getItem('draggable'))
   const lis = document.querySelectorAll('li');
   const isDragOn = toggleDrag(local);
