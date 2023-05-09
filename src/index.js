@@ -139,11 +139,11 @@ class MyTodo {
   }
 }
 
-function List (description) {
+function List(description) {
   this.id = myTodo.list.length;
   this.description = description;
   this.completed = false;
-};
+}
 
 const myTodo = new MyTodo();
 
