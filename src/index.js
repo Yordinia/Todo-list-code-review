@@ -139,7 +139,7 @@ class MyTodo {
   }
 }
 
-const List = description => {
+function List (description) {
   this.id = myTodo.list.length;
   this.description = description;
   this.completed = false;

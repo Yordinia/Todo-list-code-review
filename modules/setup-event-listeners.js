@@ -5,7 +5,7 @@ const setEventListener = (list, theFunction, event) => {
   for (let i = 0; i < list.length; i += 1) {
     list[i].addEventListener(event, theFunction);
   }
-}
+};
 
 const startSettingEventListeners = (myTodo) => {
   const form = document.querySelectorAll('form');

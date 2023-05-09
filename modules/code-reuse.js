@@ -24,28 +24,26 @@ export const createLi = (noteObj, index, isDragOn) => {
 </div>
 `;
   return li;
-}
+};
 
 export const toLocal = (list) => {
   localStorage.setItem('list', JSON.stringify(list));
-}
+};
 
-export const fromLocal = () => {
-  return JSON.parse(localStorage.getItem('list'));
-}
+export const fromLocal = () => JSON.parse(localStorage.getItem('list'));
 
-export const refreshPage =()=> {
+export const refreshPage = () => {
   document.location.reload();
-}
+};
 
-export const updateId =(myList) =>{
+export const updateId = (myList) => {
   myList.forEach((object, index) => {
     object.id = index;
   });
   toLocal(myList);
-}
+};
 
-export const falseInput= () => {
+export const falseInput = () => {
   const falseInput = form.querySelector('#false-input');
   form.reset();
   falseInput.classList.replace('setVisibilityHidden', 'setVisibility');
@@ -53,7 +51,7 @@ export const falseInput= () => {
     falseInput.classList.replace('setVisibility', 'setVisibilityHidden');
   }, 2500);
   return false;
-}
+};
 
 export const listEmpty = () => {
   const li = document.createElement('li');
@@ -62,4 +60,4 @@ export const listEmpty = () => {
                     <legend> Notes are clear ! </legend> 
                   </p>`;
   listView.appendChild(li);
-}
+};
